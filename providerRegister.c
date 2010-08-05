@@ -196,7 +196,7 @@ newProviderRegister()
     dir = "/var/lib/sfcb/registration";
   }
 
-  strcpy(fin, dir);
+  strncpy(fin, dir, sizeof(fin)-18); /* 18 = strlen("/providerRegister")+1 */
   strcat(fin, "/providerRegister");
   in = fopen(fin, "r");
   if (in == NULL)
@@ -211,7 +211,7 @@ newProviderRegister()
                                        UtilHashTable_charKey |
                                        UtilHashTable_ignoreKeyCase);
 
-    while (fgets(fin, 1024, in)) {
+    while (fgets(fin, sizeof(fin), in)) {
       n++;
       if (stmt)
         free(stmt);
