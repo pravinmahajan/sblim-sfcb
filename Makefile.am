@@ -31,6 +31,7 @@ pamdir=$(sysconfdir)/pam.d
 sfcblibdir=$(libdir)/sfcb
 cmpilibdir=$(libdir)/cmpi
 systemddir=$(prefix)/share/systemd
+cimclibdir=$(libdir)
 
 MANFILES=man/genSslCert.1 man/getSchema.1 man/sfcbd.1 man/sfcbmof.1 \
 	man/sfcbrepos.1 man/sfcbstage.1 man/sfcbunstage.1 man/sfcbuuid.1 \
@@ -123,6 +124,9 @@ endif
 sfcb_sharedobjects = \
    $(sfcblibdir)/*.so
 
+cimclib_LTLIBRARIES = \
+   libcimcClientSfcbLocal.la
+
 sfcblib_LTLIBRARIES = \
    libsfcBrokerCore.la \
    libsfcFileRepository.la \
@@ -140,7 +144,6 @@ sfcblib_LTLIBRARIES = \
    libsfcBasicAuthentication.la \
    libsfcCertificateAuthentication.la \
    libsfcObjectImplSwapI32toP32.la \
-   libcimcClientSfcbLocal.la \
    $(QUALREP_LIBS) \
    $(INDICATION_LIBS) \
    $(PAM_LIBS) \
