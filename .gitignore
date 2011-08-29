@@ -28,7 +28,6 @@ aclocal.m4
 autom4te.cache/
 classSchema2c
 confdefs.h
-compile
 config.guess
 config.h
 config.h.in
