@@ -43,6 +43,7 @@ install-sh
 libtool
 ltmain.sh
 missing
+sblim-sfcb.service.pre
 sfcb
 sfcb-dox.conf
 sfcb.cfg
